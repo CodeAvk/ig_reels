@@ -1,7 +1,5 @@
-// src/pages/index.js
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "@mui/material/styles";
-
 import { Box } from "@mui/material";
 import { reelsData } from "../utils/mockData";
 import ReelCard from "../components/ReelCard";
@@ -10,7 +8,7 @@ import Footer from "../components/Footer";
 export default function Home() {
   const [currentReelIndex, setCurrentReelIndex] = useState(0);
   const containerRef = useRef(null);
-  const theme = useTheme(); // Access the theme object
+  const theme = useTheme();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,34 +35,53 @@ export default function Home() {
 
   return (
     <Box
-      ref={containerRef}
       sx={{
-        width: "375px", // Mobile width
-        margin: "0 auto", // Center the layout
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: "100%",
         height: "100vh",
-        overflowY: "auto",
-        scrollSnapType: "y mandatory",
-        border: "1px solid #ccc", // Optional: Simulate a device frame
         position: "relative",
       }}
     >
-      {reelsData.map((reel, index) => (
-        <Box
-          key={reel.id}
-          className="reel-container"
-          data-index={index}
-          sx={{
-            height: "100vh",
-            scrollSnapAlign: "start",
-            [theme.breakpoints.down("sm")]: {
-              height: "calc(100vh - 64px)", // Responsive height
-            },
-          }}
-        >
-          <ReelCard reel={reel} inView={currentReelIndex === index} />
-        </Box>
-      ))}
-      <Footer /> {/* Add the Footer component here */}
+      <Box
+        ref={containerRef}
+        sx={{
+          width: "375px",
+          height: "calc(100vh - 56px)", // Adjust for footer height
+          overflowY: "auto",
+          scrollSnapType: "y mandatory",
+          border: "1px solid #ccc",
+          position: "relative",
+        }}
+      >
+        {reelsData.map((reel, index) => (
+          <Box
+            key={reel.id}
+            className="reel-container"
+            data-index={index}
+            sx={{
+              height: "100vh",
+              scrollSnapAlign: "start",
+              [theme.breakpoints.down("sm")]: {
+                height: "calc(100vh - 56px)", // Match container height
+              },
+            }}
+          >
+            <ReelCard reel={reel} inView={currentReelIndex === index} />
+          </Box>
+        ))}
+      </Box>
+      <Box
+        sx={{
+          position: "fixed",
+          bottom: 0,
+          width: "375px", // Match the ReelCard width
+          backgroundColor: "background.paper",
+          borderTop: "1px solid #ccc",
+          zIndex: 1000,
+        }}
+      ></Box>
     </Box>
   );
 }
