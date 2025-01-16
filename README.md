@@ -13,12 +13,12 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/react-reels.git
+https://github.com/CodeAvk/ig_reels.git
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd react-reels
+cd ig_reels
 ```
 
 3. Install dependencies:
@@ -40,27 +40,7 @@ yarn dev
 http://localhost:3000
 ```
 
-## Environment Setup
 
-Create a `.env` file in the root directory and add the following variables:
-```
-NEXT_PUBLIC_API_URL=your_api_url
-```
-
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── ReelCard/
-│   │   ├── index.js
-│   │   ├── ProductTag.js
-│   │   └── VideoControls.js
-├── styles/
-│   └── globals.css
-├── pages/
-└── utils/
-```
 
 ## Features
 
