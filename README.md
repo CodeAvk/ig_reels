@@ -1,40 +1,156 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# React Reels Component
+
+A feature-rich, responsive React component for displaying video reels in a social media style interface, similar to Instagram Reels or TikTok. This component provides a full-screen video experience with interactive elements like likes, comments, sharing, and user engagement features.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- Node.js (v14.0.0 or higher)
+- npm (v6.0.0 or higher) or yarn
+- Git
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/react-reels.git
+```
 
+2. Navigate to the project directory:
+```bash
+cd react-reels
+```
+
+3. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+4. Start the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open your browser and visit:
+```
+http://localhost:3000
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Environment Setup
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Create a `.env` file in the root directory and add the following variables:
+```
+NEXT_PUBLIC_API_URL=your_api_url
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── components/
+│   ├── ReelCard/
+│   │   ├── index.js
+│   │   ├── ProductTag.js
+│   │   └── VideoControls.js
+├── styles/
+│   └── globals.css
+├── pages/
+└── utils/
+```
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- Full-screen vertical video playback
+- Auto-play when in viewport
+- Double-tap to like animation
+- Mute/unmute toggle
+- Like, comment, and share functionality
+- User profile section with follow/unfollow button
+- Expandable video description
+- Product tagging support
+- Bottom navigation bar
+- Mobile-responsive design
+- Share menu with native share API support
+- More options menu
+- Video playback controls
+- Intersection Observer for optimized video loading
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Running Tests
+```bash
+npm run test
+# or
+yarn test
+```
 
-## Deploy on Vercel
+### Building for Production
+```bash
+npm run build
+# or
+yarn build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Linting
+```bash
+npm run lint
+# or
+yarn lint
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## Troubleshooting
+
+Common issues and their solutions:
+
+1. **Video playback issues**
+   - Check if the video format is supported by the browser
+   - Ensure proper CORS headers are set for video resources
+
+2. **Performance issues**
+   - Optimize video files
+   - Use appropriate video compression
+   - Implement lazy loading
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## Performance Optimization Tips
+
+- Use compressed video formats
+- Implement lazy loading for videos
+- Optimize image assets
+- Use proper caching strategies
+- Implement virtual scrolling for multiple reels
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Android Chrome)
+
+## Dependencies
+
+All required dependencies are listed in `package.json`. Key dependencies include:
+- React
+- Material-UI
+- Emotion
+- React Icons
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Support
+
+For support, please open an issue in the GitHub repository or contact the maintainers.
